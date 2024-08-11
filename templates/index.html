@@ -1,0 +1,16 @@
+<h2>Hello</h2>
+<h2>wellcome to restaurent</h2>
+<hr>
+{% for i in res %}
+    <p>{{ i.item }} ---- {{ i.cost }}</p>
+{% endfor %}
+<form method="post">{% csrf_token %}
+    <label for="n1">itemname</label>
+    <input type="text" placeholder="itemname" id="n1" name="item" required>
+    <label for="n2">price</label>
+    <input type="number" placeholder="price" id="n2" name="price" required>
+    <button type="submit">search</button>
+</form>
+{% if res2 %}
+<h3>you search for {{ res2 }} and {{ res2 }}</h3>
+{% endif %}
